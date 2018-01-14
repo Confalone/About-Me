@@ -1,7 +1,6 @@
 'use strict';
 
 var userPoints = 0;
-
 console.log('What\'s up folks?');
 
 alert('Welcome to my guessing Game!');
@@ -20,8 +19,8 @@ console.log(answer);
 //to lowercase
 //use confirm box
 
-if (answer=== 'yes' || answer === 'y'){
-  //if it's correct give tehm a point
+if (answer === 'yes' || answer === 'y'){
+  //if it's correct give them a point
   userPoints++;
   console.log(userPoints);
 } else {
@@ -40,11 +39,8 @@ if (answerSwim === 'yes' || answer === 'y'){
 } else {
   alert('That\'s cool, someteims it\'s just too cold for getting wet.');
 }
-
-alert ('You now have a score of' + userPoints);
-
+  alert ('You now have a score of' + userPoints);
 var answerBike = prompt('Do you like to ride bicycles? ' , 'type yes or no').toLowerCase();
-
 console.log(answerBike);
 
 if (answerBike === 'yes' || answerBike === 'y'){
@@ -52,7 +48,8 @@ if (answerBike === 'yes' || answerBike === 'y'){
   console.log(userPoints);
 } else {
   alert('It\'s prob safer to ride the bus anyway.');
-}
+} 
+
 alert('You are running a score of ' + userPoints);
 
 var answerComputers = prompt ('Do you like computers?' , 'type yes or no').toLowerCase();
@@ -74,65 +71,50 @@ if (answerCoding === 'yes' || answerCoding === 'y'){
 } else {
   alert('Again, shocked');
 }
+if (userPoints > 3){
+  alert('So far your score is ' + userPoints + '  We have a good amount in common.');
+} else {
+  alert('Thus far your score is ' + userPoints + '  We don\'t have too much in common, but i still love you and hope you have an amazing day');
+}
 
 //question 6
 //what is my fav number?
 //too high too low
 //4 guesses
 
-for (var i =4; i >= 0; i--){
+var counter = 0;
+var number = 9;
+
+for (var i = 4; i >= 0; i--){
   var answerFavnumber = parseInt (prompt(answerFavnumber));
   console.log(answerFavnumber);
   if (answerFavnumber > 9){
-    alert('Too high ' + ' guesses left.')}
+    alert('Too high, you have guessed ' + counter + ' times.');
   if (answerFavnumber < 9){
-    alert ('Too low ' + ' guesses left.')}
+    alert('Too low, you have guessed ' + counter + 'times.');}
   else {
     alert ('Bingo.');
     userPoints++;
     break;
   }
-//ar answerFavnumber = prompt ('What is my favorite number, pick between 1-10?');
-//while (answerFavnumber != 9) {
-//alert('Nope, ' + answerFavnumber + ' too high.');
-//var answerFavnumber = prompt ('What is my favorite number, pick between 1-10?');
-//}
-//if (answerFavnumber > 9) {
-//alert('Nope, ' + answerFavnumber + ' too high.');
-//var answerFavnumber = prompt ('What is my favorite number, pick between 1-10?');
-//}
-//if (answerFavnumber < 9); {
-//alert('Nope, ' + answerFavnumber + ' too low,')
-//var answerFavnumber = prompt ('What is my favorite number, pick between 1-10?');
-//}
-//var answerFavnumber = prompt ('What is my favorite number, pick between 1-10?');
 
-//for (var i = 4; i >= 0; i--); {
-  //var answerFavnumber = parseInt(prompt('What is my favorite number, pick between 1-10?'));
-  //console.log(answerFavnumber);
-  //if (answerFavnumber > 9) {
-    //alert('Nope, ' + user + ' too high');
-  //}
-  //if (answerFavnumber < 9) {
-    //alert('Nope, ' + user + ' too low');
- // }
-  //else (answerFavnumber === 9); {
-    //alert('You\'re right ' + user);
-    //userPoints++;
-    //break;
-  //}
-//}
+//question7
+//multiple correct answers stored in an array
+//six tries
+//
+var correctAnswers = ['Scent of a Woman', 'Gladiator', 'Braveheart', 'The Big Lebowski', 'It\'s a wonderful life', 'Grandma\'s boy', 'The Shawshank Redemption', 'The Godfather', 'Pulp fiction', 'American History X', 'City of God']
+var movie = prompt ('Is one of your favorite movies?') 
+for (var i = 0; i<correctAnswers.length; i++).toLowerCase();{
+  if (movie === correctAnswers[i])
+  result = true;
+}
+if (result) {
+  alert('I Love that movie too ' + user + '.');
+  userPoints++;
+}else {
+  userPoints--;
+  alert('Oh well');
+}
+}
 
-//question 7
-//fav sports
-//6 attempts to get 1 answer correct
-//as tries are used up;  answer displys a mesage to the user indicatingall the pos answers
-//var sports = prompt ('What is my favorite sport.');
-
-
-if (userPoints > 3){
-  alert('Your final score is ' + userPoints + '  We have a good amount in common.');
-} else {
-  alert('Your final score is ' + userPoints + '  We don\'t have too much in common, but i still love you and hope you have an amazing day');
-}{}
-alert('Your final score is ' + userPoints);
+alert(user + ' final score is ' + userPoints + ".");
