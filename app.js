@@ -39,8 +39,10 @@ if (answerSwim === 'yes' || answer === 'y'){
 } else {
   alert('That\'s cool, someteims it\'s just too cold for getting wet.');
 }
-  alert ('You now have a score of' + userPoints);
+alert ('You now have a score of' + userPoints);
+
 var answerBike = prompt('Do you like to ride bicycles? ' , 'type yes or no').toLowerCase();
+
 console.log(answerBike);
 
 if (answerBike === 'yes' || answerBike === 'y'){
@@ -81,40 +83,42 @@ if (userPoints > 3){
 //what is my fav number?
 //too high too low
 //4 guesses
+var answerFavnumber = prompt ("What is your favorite number?" , "type 1-10 please").toLowerCase();
 
 var counter = 0;
 var number = 9;
 
 for (var i = 4; i >= 0; i--){
-  var answerFavnumber = parseInt (prompt(answerFavnumber));
+  answerFavnumber = parseInt (prompt(answerFavnumber));
   console.log(answerFavnumber);
-  if (answerFavnumber > 9){
+  if (answerFavnumber > number){
     alert('Too high, you have guessed ' + counter + ' times.');
-  if (answerFavnumber < 9){
-    alert('Too low, you have guessed ' + counter + 'times.');}
-  else {
-    alert ('Bingo.');
-    userPoints++;
-    break;
-  }
+    if (answerFavnumber < number){
+      alert('Too low, you have guessed ' + counter + 'times.');}
+    else {
+      alert ('Bingo.');
+      userPoints++;
+      break;
+    }
 
-//question7
-//multiple correct answers stored in an array
-//six tries
-//
-var correctAnswers = ['Scent of a Woman', 'Gladiator', 'Braveheart', 'The Big Lebowski', 'It\'s a wonderful life', 'Grandma\'s boy', 'The Shawshank Redemption', 'The Godfather', 'Pulp fiction', 'American History X', 'City of God']
-var movie = prompt ('Is one of your favorite movies?') 
-for (var i = 0; i<correctAnswers.length; i++).toLowerCase();{
-  if (movie === correctAnswers[i])
-  result = true;
-}
-if (result) {
-  alert('I Love that movie too ' + user + '.');
-  userPoints++;
-}else {
-  userPoints--;
-  alert('Oh well');
-}
-}
+    //question7
+    //multiple correct answers stored in an array
+    //six tries
+    //
+
+    var answerFavMovie = prompt('What\'s your favorite movie?' , 'type movie here').toLocaleLowerCase();
+    var correctAnswers = ['Scent of a Woman', 'Gladiator', 'Braveheart', 'The Big Lebowski', 'It\'s a wonderful life', 'Grandma\'s boy', 'The Shawshank Redemption', 'The Godfather', 'Pulp fiction', 'American History X', 'City of God'];
+    var anserFavMovie = prompt (answerFavMovie + ' is one of your favorite movies?');
+    for (var i = 6; i<correctAnswers.length; i++);{
+      if (answerFavMovie === correctAnswers[i])
+        result = true;
+    if (correctAnswers) {
+      alert('I Love that movie too ' + user + '.');
+      userPoints++;
+    }else {
+      userPoints--;
+      alert('Oh well');
+    }
+  }
 
 alert(user + ' final score is ' + userPoints + ".");
