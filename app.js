@@ -1,6 +1,7 @@
 'use strict';
 
 var userPoints = 0;
+
 console.log('What\'s up folks?');
 
 alert('Welcome to my guessing Game!');
@@ -50,8 +51,7 @@ if (answerBike === 'yes' || answerBike === 'y'){
   console.log(userPoints);
 } else {
   alert('It\'s prob safer to ride the bus anyway.');
-} 
-
+}
 alert('You are running a score of ' + userPoints);
 
 var answerComputers = prompt ('Do you like computers?' , 'type yes or no').toLowerCase();
@@ -82,8 +82,9 @@ if (userPoints > 3){
 //question 6
 //what is my fav number?
 //too high too low
+
 //4 guesses
-var answerFavnumber = prompt ("What is your favorite number?" , "type 1-10 please").toLowerCase();
+var answerFavnumber = prompt ('What is your favorite number?' , 'type 1-10 please').toLowerCase();
 
 var counter = 0;
 var number = 9;
@@ -92,33 +93,38 @@ for (var i = 4; i >= 0; i--){
   answerFavnumber = parseInt (prompt(answerFavnumber));
   console.log(answerFavnumber);
   if (answerFavnumber > number){
+    counter++;
     alert('Too high, you have guessed ' + counter + ' times.');
-    if (answerFavnumber < number){
-      alert('Too low, you have guessed ' + counter + 'times.');}
-    else {
-      alert ('Bingo.');
-      userPoints++;
-      break;
-    }
-
-    //question7
-    //multiple correct answers stored in an array
-    //six tries
-    //
-
-    var answerFavMovie = prompt('What\'s your favorite movie?' , 'type movie here').toLocaleLowerCase();
-    var correctAnswers = ['Scent of a Woman', 'Gladiator', 'Braveheart', 'The Big Lebowski', 'It\'s a wonderful life', 'Grandma\'s boy', 'The Shawshank Redemption', 'The Godfather', 'Pulp fiction', 'American History X', 'City of God'];
-    var anserFavMovie = prompt (answerFavMovie + ' is one of your favorite movies?');
-    for (var i = 6; i<correctAnswers.length; i++);{
-      if (answerFavMovie === correctAnswers[i])
-        result = true;
-    if (correctAnswers) {
-      alert('I Love that movie too ' + user + '.');
-      userPoints++;
-    }else {
-      userPoints--;
-      alert('Oh well');
-    }
   }
+  else if (answerFavnumber < number){
+    counter++;
+    alert('Too low, you have guessed ' + counter + 'times.');
+  }
+  else if (answerFavnumber === number){
+    alert ('Bingo.');
+    userPoints++;
+    break;
+  }
+}
+//question7
+//multiple correct answers stored in an array
+//six tries
+//
 
-alert(user + ' final score is ' + userPoints + ".");
+var correctAnswers = ['Scent of a Woman', 'Gladiator', 'Braveheart', 'The Big Lebowski', 'It\'s a wonderful life', 'Grandma\'s boy', 'The Shawshank Redemption', 'The Godfather', 'Pulp fiction', 'American History X'];
+
+for (var attempts = 0; attempts<correctAnswers.length; attempts++){
+  var answerFavMovie = prompt('Guess what my favorite movie is?' , 'type movie here').toLocaleLowerCase();
+  console.log(answerFavMovie);
+  alert (answerFavMovie + ' is one of your favorite movies.');
+  if
+  (answerFavMovie !== correctAnswers) {
+    alert('Oh well, guess again');
+    attempts++;
+  } else {
+    alert('I Love that movie too ' + user + '.');
+    userPoints++;
+  }
+}
+alert(user + '\'s final score is ' + userPoints + '.');
+alert(user + ' got ' + userPoints + ' questions right out of 7!');
