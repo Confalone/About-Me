@@ -13,7 +13,7 @@ alert('I hope you are having a great day ' + user);
 
 
 function q1() {
-  var answer = prompt('Do you like to be outdoors?', 'type yes or no').toLowerCase();
+  var answer = prompt('Do I like to be outdoors?', 'type yes or no').toLowerCase();
 
   console.log(answer);
 
@@ -27,13 +27,13 @@ function q1() {
     userPoints++;
     console.log(userPoints);
   } else {
-    alert('I love my couch sometimes too.');
+    alert('I do love my couch sometimes too, but prefer to be outside.');
   }
 
   alert('You have ' + userPoints + ' point.');
 }
 function q2() {
-  var answerSwim = prompt('Do you like to go swimming?', 'type yes or no').toLowerCase();
+  var answerSwim = prompt('Do I like to go swimming?', 'type yes or no').toLowerCase();
 
   console.log(answerSwim);
 
@@ -41,13 +41,13 @@ function q2() {
     userPoints++;
     console.log(userPoints);
   } else {
-    alert('That\'s cool, someteims it\'s just too cold for getting wet.');
+    alert('That\'s cool, someteims I think it\'s just too cold for getting wet.');
   }
   alert('You now have a score of' + userPoints);
 }
 
 function q3() {
-  var answerBike = prompt('Do you like to ride bicycles? ', 'type yes or no').toLowerCase();
+  var answerBike = prompt('Do I like to ride bicycles? ', 'type yes or no').toLowerCase();
 
   console.log(answerBike);
 
@@ -55,13 +55,13 @@ function q3() {
     userPoints++;
     console.log(userPoints);
   } else {
-    alert('It\'s prob safer to ride the bus anyway.');
+    alert('I like to drive and take the bus sometimes too.');
   }
   alert('You are running a score of ' + userPoints);
 }
 
 function q4() {
-  var answerComputers = prompt('Do you like computers?', 'type yes or no').toLowerCase();
+  var answerComputers = prompt('Do I like computers?', 'type yes or no').toLowerCase();
 
   console.log(answerComputers);
 
@@ -69,18 +69,18 @@ function q4() {
     userPoints++;
     console.log(userPoints);
   } else {
-    alert('Wow I am schocked.');
+    alert('Of course I do.');
   }
 }
 
 function q5() {
-  var answerCoding = prompt('I bet you like coding right?', 'type yes or no').toLowerCase();
+  var answerCoding = prompt('Do I like coding?', 'type yes or no').toLowerCase();
 
   if (answerCoding === 'yes' || answerCoding === 'y') {
     userPoints++;
     console.log(userPoints);
   } else {
-    alert('Again, shocked');
+    alert('True, I am learning.');
   }
   if (userPoints > 3) {
     alert('So far your score is ' + userPoints + '  We have a good amount in common.');
