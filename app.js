@@ -141,22 +141,35 @@ function q6() {
 
 
 function q7() {
-  var correctAnswers = ['Scent of a Woman', 'Gladiator', 'Braveheart', 'The Big Lebowski', 'It\'s a wonderful life', 'Grandma\'s boy', 'The Shawshank Redemption', 'The Godfather', 'Pulp fiction', 'American History X'];
-
+  var correctAnswers = ['scent of a woman', 'gladiator', 'braveheart', 'the big lebowski', 'it\'s a wonderful life', 'grandma\'s boy', 'the shawshank redemption', 'the godfather', 'pulp fiction', 'american history X'];
+  var cor = false;
   for (var attempts = 0; attempts < correctAnswers.length; attempts++) {
-    var answerFavMovie = prompt('Guess what my favorite movie is?', 'type movie here').toLocaleLowerCase();
-    console.log(answerFavMovie);
-    alert(answerFavMovie + ' is one of your favorite movies.');
-    if
-    (answerFavMovie !== correctAnswers) {
-      alert('Oh well, guess again');
-      attempts++;
-    } else {
-      alert('I Love that movie too ' + user + '.');
-      userPoints++;
+    if (cor === false)
+    {
+      var answerFavMovie = prompt('Guess what my favorite movie is?', 'type movie here').toLocaleLowerCase();
+      console.log(answerFavMovie);
+      alert(answerFavMovie + ' is one of your favorite movies.');
+      for (var i=0; i<correctAnswers.length; i++) {
+        if (i === 9) {
+          if
+          (answerFavMovie !== correctAnswers[i]) {
+            alert('Oh well, guess again');
+            attempts++;
+          }
+        } else if (answerFavMovie === correctAnswers[i]) {
+          alert('I Love that movie too ' + user + '.');
+          userPoints++;
+          cor = true;
+          break;
+        }
+      }
+    }
+    else {
+      break;
     }
   }
 }
+
 q1();
 q2();
 q3();
@@ -167,4 +180,3 @@ q7();
 
 alert(user + '\'s final score is ' + userPoints + '.');
 alert(user + ' got ' + userPoints + ' questions right out of 7!');
-
