@@ -113,19 +113,20 @@ for (var i = 4; i >= 0; i--){
 
 var correctAnswers = ['scent of a woman', 'gladiator', 'braveheart', 'the big Lebowski', 'it\'s a wonderful life', 'grandma\'s boy', 'the shawshank redemption', 'the godfather', 'pulp fiction', 'american history X'];
 var cor = false;
-
-for (var attempts = 0; attempts<correctAnswers.length; attempts++){
+for (var attempts = 0; attempts < correctAnswers.length; attempts++) {
   if (cor === false)
   {
-    var answerFavMovie = prompt('Guess what my favorite movie is?' , 'type movie here').toLocaleLowerCase();
+    var answerFavMovie = prompt('Guess what my favorite movie is?', 'type movie here').toLocaleLowerCase();
     console.log(answerFavMovie);
-    alert (answerFavMovie + ' is one of your favorite movies.');
-    for (i = 0; i<correctAnswers.length; i++) {
-      if
-      (answerFavMovie !== correctAnswers[i]) {
-        alert('Oh well, guess again');
-        attempts++;
-      } else {
+    alert(answerFavMovie + ' is one of your favorite movies.');
+    for (i=0; i<correctAnswers.length; i++) {
+      if (i === 9) {
+        if
+        (answerFavMovie !== correctAnswers[i]) {
+          alert('Oh well, guess again');
+          attempts++;
+        }
+      } else if (answerFavMovie === correctAnswers[i]) {
         alert('I Love that movie too ' + user + '.');
         userPoints++;
         cor = true;
