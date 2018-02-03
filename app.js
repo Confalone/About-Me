@@ -84,13 +84,13 @@ if (userPoints > 3){
 //too high too low
 
 //4 guesses
-var answerFavnumber = prompt ('What is your favorite number?' , 'type 1-10 please').toLowerCase();
 
 var counter = 0;
 var number = 9;
 
 for (var i = 4; i >= 0; i--){
-  answerFavnumber = parseInt (prompt(answerFavnumber));
+  var answerFavnumber = prompt ('What is your favorite number?' , 'type 1-10 please').toLowerCase();
+  answerFavnumber = parseInt (answerFavnumber);
   console.log(answerFavnumber);
   if (answerFavnumber > number){
     counter++;
@@ -100,7 +100,7 @@ for (var i = 4; i >= 0; i--){
     counter++;
     alert('Too low, you have guessed ' + counter + 'times.');
   }
-  else if (answerFavnumber === number){
+  else if (answerFavnumber === number) {
     alert ('Bingo.');
     userPoints++;
     break;
@@ -111,19 +111,30 @@ for (var i = 4; i >= 0; i--){
 //six tries
 //
 
-var correctAnswers = ['Scent of a Woman', 'Gladiator', 'Braveheart', 'The Big Lebowski', 'It\'s a wonderful life', 'Grandma\'s boy', 'The Shawshank Redemption', 'The Godfather', 'Pulp fiction', 'American History X'];
+var correctAnswers = ['scent of a woman', 'gladiator', 'braveheart', 'the big Lebowski', 'it\'s a wonderful life', 'grandma\'s boy', 'the shawshank redemption', 'the godfather', 'pulp fiction', 'american history X'];
+var cor = false;
 
 for (var attempts = 0; attempts<correctAnswers.length; attempts++){
-  var answerFavMovie = prompt('Guess what my favorite movie is?' , 'type movie here').toLocaleLowerCase();
-  console.log(answerFavMovie);
-  alert (answerFavMovie + ' is one of your favorite movies.');
-  if
-  (answerFavMovie !== correctAnswers) {
-    alert('Oh well, guess again');
-    attempts++;
-  } else {
-    alert('I Love that movie too ' + user + '.');
-    userPoints++;
+  if (cor === false)
+  {
+    var answerFavMovie = prompt('Guess what my favorite movie is?' , 'type movie here').toLocaleLowerCase();
+    console.log(answerFavMovie);
+    alert (answerFavMovie + ' is one of your favorite movies.');
+    for (i = 0; i<correctAnswers.length; i++) {
+      if
+      (answerFavMovie !== correctAnswers[i]) {
+        alert('Oh well, guess again');
+        attempts++;
+      } else {
+        alert('I Love that movie too ' + user + '.');
+        userPoints++;
+        cor = true;
+        break;
+      }
+    }
+  }
+  else {
+    break;
   }
 }
 alert(user + '\'s final score is ' + userPoints + '.');
