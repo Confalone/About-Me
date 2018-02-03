@@ -167,3 +167,4 @@ q7();
 
 alert(user + '\'s final score is ' + userPoints + '.');
 alert(user + ' got ' + userPoints + ' questions right out of 7!');
+
